@@ -3,9 +3,62 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicePatterns.AppHost", "MicroservicePatterns.AppHost\MicroservicePatterns.AppHost.csproj", "{EC1B3A94-DD61-4F46-8A6B-715466412A19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicePatterns.ServiceDefaults", "MicroservicePatterns.ServiceDefaults\MicroservicePatterns.ServiceDefaults.csproj", "{96348D5C-63D6-9C18-23C0-E0A9D8938CA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "patterns", "patterns", "{A1B3DA4F-7E4D-9C63-7271-7C9E534D4ACE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CQRS", "CQRS", "{C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Library.BookService", "patterns\CQRS\CQRS.Library.BookService\CQRS.Library.BookService.csproj", "{F2C9F52C-CA7D-4397-8BDF-BED40012CBDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Library.BorrowerService", "patterns\CQRS\CQRS.Library.BorrowerService\CQRS.Library.BorrowerService.csproj", "{BF752E10-9563-4AAF-AAD8-9B03CA401EBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Library.BorrowingHistoryService", "patterns\CQRS\CQRS.Library.BorrowingHistoryService\CQRS.Library.BorrowingHistoryService.csproj", "{A22F675A-D436-4E9E-8817-FE7111AC7163}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Library.BorrowingService", "patterns\CQRS\CQRS.Library.BorrowingService\CQRS.Library.BorrowingService.csproj", "{048E5ADA-0FFB-4218-A5E0-9D5737F5B78F}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC1B3A94-DD61-4F46-8A6B-715466412A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1B3A94-DD61-4F46-8A6B-715466412A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1B3A94-DD61-4F46-8A6B-715466412A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1B3A94-DD61-4F46-8A6B-715466412A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96348D5C-63D6-9C18-23C0-E0A9D8938CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96348D5C-63D6-9C18-23C0-E0A9D8938CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96348D5C-63D6-9C18-23C0-E0A9D8938CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96348D5C-63D6-9C18-23C0-E0A9D8938CA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2C9F52C-CA7D-4397-8BDF-BED40012CBDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2C9F52C-CA7D-4397-8BDF-BED40012CBDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2C9F52C-CA7D-4397-8BDF-BED40012CBDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2C9F52C-CA7D-4397-8BDF-BED40012CBDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF752E10-9563-4AAF-AAD8-9B03CA401EBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF752E10-9563-4AAF-AAD8-9B03CA401EBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF752E10-9563-4AAF-AAD8-9B03CA401EBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF752E10-9563-4AAF-AAD8-9B03CA401EBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A22F675A-D436-4E9E-8817-FE7111AC7163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A22F675A-D436-4E9E-8817-FE7111AC7163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A22F675A-D436-4E9E-8817-FE7111AC7163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A22F675A-D436-4E9E-8817-FE7111AC7163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{048E5ADA-0FFB-4218-A5E0-9D5737F5B78F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{048E5ADA-0FFB-4218-A5E0-9D5737F5B78F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{048E5ADA-0FFB-4218-A5E0-9D5737F5B78F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{048E5ADA-0FFB-4218-A5E0-9D5737F5B78F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60} = {A1B3DA4F-7E4D-9C63-7271-7C9E534D4ACE}
+		{F2C9F52C-CA7D-4397-8BDF-BED40012CBDE} = {C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60}
+		{BF752E10-9563-4AAF-AAD8-9B03CA401EBC} = {C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60}
+		{A22F675A-D436-4E9E-8817-FE7111AC7163} = {C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60}
+		{048E5ADA-0FFB-4218-A5E0-9D5737F5B78F} = {C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1EDCE8C1-96A9-48DD-B09B-95617D908E11}
