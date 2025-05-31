@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace DatabaseMigrationHelpers
+namespace MicroservicePatterns.DatabaseMigrationHelpers
 {
     public static class DbContextMigrationExtensions
     {

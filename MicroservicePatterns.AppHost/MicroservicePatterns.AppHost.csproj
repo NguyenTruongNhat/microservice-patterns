@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
 
@@ -22,6 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EventBus.Kafka\EventBus.Kafka.csproj" />
+    <ProjectReference Include="..\MicroservicePatterns.Shared\MicroservicePatterns.Shared.csproj" />
     <ProjectReference Include="..\patterns\CQRS\CQRS.Library.BookService\CQRS.Library.BookService.csproj" />
     <ProjectReference Include="..\patterns\CQRS\CQRS.Library.BorrowerService\CQRS.Library.BorrowerService.csproj" />
     <ProjectReference Include="..\patterns\CQRS\CQRS.Library.BorrowingHistoryService\CQRS.Library.BorrowingHistoryService.csproj" />
