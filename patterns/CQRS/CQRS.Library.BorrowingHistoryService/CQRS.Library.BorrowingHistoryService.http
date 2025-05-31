@@ -1,0 +1,6 @@
+@CQRS.Library.BorrowingHistoryApi_HostAddress = http://localhost:5140
+
+GET {{CQRS.Library.BorrowingHistoryApi_HostAddress}}/api/cqrs/v1/history/items?pageSize=10&pageIndex=0&query=Fellowship
+Accept: application/json
+
+###

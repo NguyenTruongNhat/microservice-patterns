@@ -1,5 +1,5 @@
-using CQRS.Library.BorrowerService.Apis;
-using CQRS.Library.BorrowerService.Bootstraping;
+using CQRS.Library.BorrowingHistoryService.Apis;
+using CQRS.Library.BorrowingHistoryService.Bootstraping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +15,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapBorrowerApi();
+app.MapBorrowingHistoryApi();
 
 app.Run();
 
