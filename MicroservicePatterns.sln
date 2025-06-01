@@ -15,6 +15,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Library.BorrowingServi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Library.BorrowingHistoryService", "patterns\CQRS\CQRS.Library.BorrowingHistoryService\CQRS.Library.BorrowingHistoryService.csproj", "{AD890AE6-0F35-45BC-A6DA-CDF1228B151F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus", "EventBus\EventBus.csproj", "{86EA8A28-2720-46B0-8C75-2CCBDD347C4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.Kafka", "EventBus.Kafka\EventBus.Kafka.csproj", "{342EC065-5618-44BE-A8FB-B07EF54FCAB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Library.IntegrationEvents", "patterns\CQRS\CQRS.Library.IntegrationEvents\CQRS.Library.IntegrationEvents.csproj", "{17FFB391-6B56-4C7A-9559-8ECC529B54C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{089100B1-113F-4E66-888A-E83F3999EAFD}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yaml = docker-compose.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +48,18 @@ Global
 		{AD890AE6-0F35-45BC-A6DA-CDF1228B151F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD890AE6-0F35-45BC-A6DA-CDF1228B151F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD890AE6-0F35-45BC-A6DA-CDF1228B151F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86EA8A28-2720-46B0-8C75-2CCBDD347C4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86EA8A28-2720-46B0-8C75-2CCBDD347C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86EA8A28-2720-46B0-8C75-2CCBDD347C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86EA8A28-2720-46B0-8C75-2CCBDD347C4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{342EC065-5618-44BE-A8FB-B07EF54FCAB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{342EC065-5618-44BE-A8FB-B07EF54FCAB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{342EC065-5618-44BE-A8FB-B07EF54FCAB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{342EC065-5618-44BE-A8FB-B07EF54FCAB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17FFB391-6B56-4C7A-9559-8ECC529B54C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17FFB391-6B56-4C7A-9559-8ECC529B54C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17FFB391-6B56-4C7A-9559-8ECC529B54C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17FFB391-6B56-4C7A-9559-8ECC529B54C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +70,7 @@ Global
 		{376BD2EC-DB73-4272-A4DC-BD659DBD6992} = {C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60}
 		{6C4063D0-411F-47C5-B595-2E2197C41F5E} = {C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60}
 		{AD890AE6-0F35-45BC-A6DA-CDF1228B151F} = {C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60}
+		{17FFB391-6B56-4C7A-9559-8ECC529B54C5} = {C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1EDCE8C1-96A9-48DD-B09B-95617D908E11}

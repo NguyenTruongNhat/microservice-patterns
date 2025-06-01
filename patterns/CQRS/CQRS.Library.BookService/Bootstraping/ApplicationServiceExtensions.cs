@@ -1,4 +1,5 @@
 ﻿using CQRS.Library.BookService.Infrastructure.Data;
+using EventBus.Kafka;
 using Microsoft.EntityFrameworkCore;
 
 namespace CQRS.Library.BookService.Bootstraping;
@@ -13,6 +14,10 @@ public static class ApplicationServiceExtensions
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
         builder.Services.AddDbContext<BookDbContext>(options =>
         options.UseNpgsql(connectionString));
+
+        builder.Services.ConfigureKafkaProducer(builder.Configuration);
+
+        builder.AddKafkaEventPublisher("BookService-Topic");
 
         return builder;
     }
