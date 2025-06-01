@@ -4,20 +4,6 @@ using Microsoft.Extensions.Configuration;
 namespace EventBus.Kafka;
 public static class KafkaEventBusExtensions
 {
-    //public static IHostApplicationBuilder AddKafkaProducer(this IHostApplicationBuilder builder, string connectionName)
-    //{
-    //    builder.AddKafkaProducer<string, MessageEnvelop>(connectionName,
-    //        configureSettings: (settings) => { 
-    //        },
-    //        configureBuilder: (builder) =>
-    //        {
-    //            builder.SetValueSerializer(new MessageEnvelopSerializer());
-    //        }
-    //        );
-
-    //    return builder;
-    //}
-
     public static void ConfigureKafkaProducer(this IServiceCollection services, IConfiguration configuration)
     {
         var bootstrapServers = configuration.GetSection("KafkaConnection").Value;
@@ -54,26 +40,9 @@ public static class KafkaEventBusExtensions
         }
     }
 
-    //public static IHostApplicationBuilder AddKafkaMessageEnvelopConsumer(this IHostApplicationBuilder builder, string groupId, string connectionName = "kafka")
-    //{
-    //    builder.AddKafkaConsumer<string, MessageEnvelop>(connectionName, configureSettings: (settings) =>
-    //    {
-    //        settings.Config.GroupId = groupId;
-    //        settings.Config.AutoOffsetReset = AutoOffsetReset.Earliest;
-    //    },
-    //    configureBuilder: (builder) =>
-    //    {
-    //        builder.SetValueDeserializer(new MessageEnvelopDeserializer());
-    //    }
-    //    );
-
-    //    return builder;
-    //}
-
-    public static void AddKafkaMessageEnvelopConsumer(this IServiceCollection services, IConfiguration configuration, string groupId, string connectionName = "kafka")
+    public static void AddKafkaMessageEnvelopConsumer(this IServiceCollection services, IConfiguration configuration, string groupId)
     {
-        var bootstrapServers = configuration.GetConnectionString(connectionName);
-
+        var bootstrapServers = configuration.GetSection("KafkaConnection").Value;
         var consumerConfig = new ConsumerConfig
         {
             BootstrapServers = bootstrapServers,
@@ -98,8 +67,7 @@ public static class KafkaEventBusExtensions
         var options = new EventHandlingWorkerOptions();
         configureOptions?.Invoke(options);
 
-        builder.Services.AddKafkaMessageEnvelopConsumer(builder.Configuration, groupId: "my-consumer-group");
-        //builder.AddKafkaMessageEnvelopConsumer(options.KafkaGroupId);
+        builder.Services.AddKafkaMessageEnvelopConsumer(builder.Configuration, groupId: options.KafkaGroupId);
         builder.Services.AddSingleton(options);
         builder.Services.AddSingleton(services => options.IntegrationEventFactory);
         builder.Services.AddHostedService<EventHandlingService>();

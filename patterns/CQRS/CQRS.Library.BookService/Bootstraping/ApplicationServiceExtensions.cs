@@ -12,12 +12,11 @@ public static class ApplicationServiceExtensions
 
         // Add EF Core
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-        builder.Services.AddDbContext<BookDbContext>(options =>
-        options.UseNpgsql(connectionString));
+        builder.Services.AddDbContext<BookDbContext>(options => options.UseNpgsql(connectionString));
 
         builder.Services.ConfigureKafkaProducer(builder.Configuration);
 
-        builder.AddKafkaEventPublisher("BookService-Topic");
+        builder.AddKafkaEventPublisher("BookServiceTP");
 
         return builder;
     }
