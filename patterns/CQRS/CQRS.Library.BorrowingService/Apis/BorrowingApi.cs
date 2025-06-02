@@ -1,4 +1,5 @@
 ﻿using CQRS.Library.BorrowingService.Infrastructure.Entity;
+using CQRS.Library.IntegrationEvents;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace CQRS.Library.BorrowingService.Apis;
@@ -41,14 +42,14 @@ public static class BorrowingApi
         await services.DbContext.Borrowings.AddAsync(borrowing);
         await services.DbContext.SaveChangesAsync();
 
-        //await services.EventPublisher.PublishAsync(new BookBorrowedIntegrationEvent()
-        //{
-        //    BorrowingId = borrowing.Id,
-        //    BorrowerId = borrowing.BorrowerId,
-        //    BookId = borrowing.BookId,
-        //    BorrowedAt = borrowing.BorrowedAt,
-        //    ValidUntil = borrowing.ValidUntil
-        //});
+        await services.EventPublisher.PublishAsync(new BookBorrowedIntegrationEvent()
+        {
+            BorrowingId = borrowing.Id,
+            BorrowerId = borrowing.BorrowerId,
+            BookId = borrowing.BookId,
+            BorrowedAt = borrowing.BorrowedAt,
+            ValidUntil = borrowing.ValidUntil
+        });
 
         return TypedResults.Ok(borrowing);
     }
@@ -65,13 +66,13 @@ public static class BorrowingApi
         borrowing.HasReturned = true;
         await services.DbContext.SaveChangesAsync();
 
-        //await services.EventPublisher.PublishAsync(new BookReturnedIntegrationEvent()
-        //{
-        //    BorrowingId = borrowing.Id,
-        //    BorrowerId = borrowing.BorrowerId,
-        //    BookId = borrowing.BookId,
-        //    ReturnedAt = borrowing.ReturnedAt.Value
-        //});
+        await services.EventPublisher.PublishAsync(new BookReturnedIntegrationEvent()
+        {
+            BorrowingId = borrowing.Id,
+            BorrowerId = borrowing.BorrowerId,
+            BookId = borrowing.BookId,
+            ReturnedAt = borrowing.ReturnedAt.Value
+        });
 
         return TypedResults.Ok();
     }

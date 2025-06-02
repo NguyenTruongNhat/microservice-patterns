@@ -15,4 +15,10 @@
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\EventBus.Kafka\EventBus.Kafka.csproj" />
+	  <ProjectReference Include="..\..\..\EventBus\EventBus.csproj" />
+	  <ProjectReference Include="..\CQRS.Library.IntegrationEvents\CQRS.Library.IntegrationEvents.csproj" />
+	</ItemGroup>
+
 </Project>

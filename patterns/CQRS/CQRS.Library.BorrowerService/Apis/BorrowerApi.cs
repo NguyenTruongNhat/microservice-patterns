@@ -1,4 +1,5 @@
 ﻿using CQRS.Library.BorrowerService.Infrastructure.Entity;
+using CQRS.Library.IntegrationEvents;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
@@ -46,14 +47,14 @@ public static class BorrowerApi
         await services.DbContext.Borrowers.AddAsync(borrower);
         await services.DbContext.SaveChangesAsync();
 
-        //await services.EventPublisher.PublishAsync(new BorrowerCreatedIntegrationEvent()
-        //{
-        //    BorrowerId = borrower.Id,
-        //    Name = borrower.Name,
-        //    Address = borrower.Address,
-        //    PhoneNumber = borrower.PhoneNumber,
-        //    Email = borrower.Email
-        //});
+        await services.EventPublisher.PublishAsync(new BorrowerCreatedIntegrationEvent()
+        {
+            BorrowerId = borrower.Id,
+            Name = borrower.Name,
+            Address = borrower.Address,
+            PhoneNumber = borrower.PhoneNumber,
+            Email = borrower.Email
+        });
 
         return TypedResults.Ok(borrower);
     }
@@ -72,14 +73,14 @@ public static class BorrowerApi
         services.DbContext.Borrowers.Update(existingBorrower);
 
         await services.DbContext.SaveChangesAsync();
-        //await services.EventPublisher.PublishAsync(new BorrowerUpdatedIntegrationEvent()
-        //{
-        //    BorrowerId = existingBorrower.Id,
-        //    Name = existingBorrower.Name,
-        //    Address = existingBorrower.Address,
-        //    PhoneNumber = existingBorrower.PhoneNumber,
-        //    Email = existingBorrower.Email
-        //});
+        await services.EventPublisher.PublishAsync(new BorrowerUpdatedIntegrationEvent()
+        {
+            BorrowerId = existingBorrower.Id,
+            Name = existingBorrower.Name,
+            Address = existingBorrower.Address,
+            PhoneNumber = existingBorrower.PhoneNumber,
+            Email = existingBorrower.Email
+        });
 
         return TypedResults.Ok();
     }
