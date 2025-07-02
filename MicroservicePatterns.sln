@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		docker-compose.yaml = docker-compose.yaml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsumerInitializationService", "KafkaConsumerInitializationService\KafkaConsumerInitializationService.csproj", "{80217436-C367-4ECC-967F-D0C5E51A6879}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{17FFB391-6B56-4C7A-9559-8ECC529B54C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17FFB391-6B56-4C7A-9559-8ECC529B54C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17FFB391-6B56-4C7A-9559-8ECC529B54C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80217436-C367-4ECC-967F-D0C5E51A6879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80217436-C367-4ECC-967F-D0C5E51A6879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80217436-C367-4ECC-967F-D0C5E51A6879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80217436-C367-4ECC-967F-D0C5E51A6879}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
