@@ -1,5 +1,7 @@
 using CQRS.Library.BorrowingService.Apis;
 using CQRS.Library.BorrowingService.Bootstraping;
+using CQRS.Library.BorrowingService.Infrastructure.Data;
+using MicroservicePatterns.DatabaseMigrationHelpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapBorrowingApi();
+
+await app.MigrateDbContextAsync<BorrowingDbContext>();
 
 app.Run();
 

@@ -1,11 +1,10 @@
 using CQRS.Library.BookService.Apis;
 using CQRS.Library.BookService.Bootstraping;
+using CQRS.Library.BookService.Infrastructure.Data;
+using MicroservicePatterns.DatabaseMigrationHelpers;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.AddApplicationServices();
-
-
-
 
 var app = builder.Build();
 
@@ -18,5 +17,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapBookApi();
+
+await app.MigrateDbContextAsync<BookDbContext>();
 
 app.Run();

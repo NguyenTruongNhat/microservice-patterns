@@ -14,6 +14,8 @@ public static class ApplicationServiceExtensions
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
         builder.Services.AddDbContext<BookDbContext>(options => options.UseNpgsql(connectionString));
 
+        
+
         builder.Services.ConfigureKafkaProducer(builder.Configuration);
 
         builder.AddKafkaEventPublisher("BookServiceTP");

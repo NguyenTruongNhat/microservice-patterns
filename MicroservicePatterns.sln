@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsumerInitializationService", "KafkaConsumerInitializationService\KafkaConsumerInitializationService.csproj", "{80217436-C367-4ECC-967F-D0C5E51A6879}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicePatterns.DatabaseMigrationHelpers", "MicroservicePatterns.DatabaseMigrationHelpers\MicroservicePatterns.DatabaseMigrationHelpers.csproj", "{77100EC4-BBC4-4611-8AAD-70E0F1525DF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{80217436-C367-4ECC-967F-D0C5E51A6879}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80217436-C367-4ECC-967F-D0C5E51A6879}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80217436-C367-4ECC-967F-D0C5E51A6879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77100EC4-BBC4-4611-8AAD-70E0F1525DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77100EC4-BBC4-4611-8AAD-70E0F1525DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77100EC4-BBC4-4611-8AAD-70E0F1525DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77100EC4-BBC4-4611-8AAD-70E0F1525DF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
