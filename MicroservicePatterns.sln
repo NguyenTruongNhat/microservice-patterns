@@ -30,6 +30,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsumerInitialization
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroservicePatterns.DatabaseMigrationHelpers", "MicroservicePatterns.DatabaseMigrationHelpers\MicroservicePatterns.DatabaseMigrationHelpers.csproj", "{77100EC4-BBC4-4611-8AAD-70E0F1525DF2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Saga", "Saga", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Choreography", "Choreography", "{2AACD950-4B9A-41D6-82C6-7EE7700759D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orchestration", "Orchestration", "{9C7B30A2-231A-4A62-B79A-2D221A48C782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saga.OnlineStore.CatalogService", "patterns\Saga\Choreography\Saga.OnlineStore.CatalogService\Saga.OnlineStore.CatalogService.csproj", "{B3D9D916-6D48-4608-888E-D9246C8A3DAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saga.OnlineStore.IntegrationEvents", "Saga.OnlineStore.IntegrationEvents\Saga.OnlineStore.IntegrationEvents.csproj", "{F31821A9-F3BB-4D89-BA55-C86110D46EC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +82,14 @@ Global
 		{77100EC4-BBC4-4611-8AAD-70E0F1525DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77100EC4-BBC4-4611-8AAD-70E0F1525DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77100EC4-BBC4-4611-8AAD-70E0F1525DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D9D916-6D48-4608-888E-D9246C8A3DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D9D916-6D48-4608-888E-D9246C8A3DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D9D916-6D48-4608-888E-D9246C8A3DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D9D916-6D48-4608-888E-D9246C8A3DAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F31821A9-F3BB-4D89-BA55-C86110D46EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F31821A9-F3BB-4D89-BA55-C86110D46EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F31821A9-F3BB-4D89-BA55-C86110D46EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F31821A9-F3BB-4D89-BA55-C86110D46EC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +101,11 @@ Global
 		{6C4063D0-411F-47C5-B595-2E2197C41F5E} = {C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60}
 		{AD890AE6-0F35-45BC-A6DA-CDF1228B151F} = {C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60}
 		{17FFB391-6B56-4C7A-9559-8ECC529B54C5} = {C459FF3A-68C2-AD78-BAEF-E0E01C7BAB60}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {A1B3DA4F-7E4D-9C63-7271-7C9E534D4ACE}
+		{2AACD950-4B9A-41D6-82C6-7EE7700759D0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{9C7B30A2-231A-4A62-B79A-2D221A48C782} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{B3D9D916-6D48-4608-888E-D9246C8A3DAA} = {2AACD950-4B9A-41D6-82C6-7EE7700759D0}
+		{F31821A9-F3BB-4D89-BA55-C86110D46EC3} = {2AACD950-4B9A-41D6-82C6-7EE7700759D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1EDCE8C1-96A9-48DD-B09B-95617D908E11}
