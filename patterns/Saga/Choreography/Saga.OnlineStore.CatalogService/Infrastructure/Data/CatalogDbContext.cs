@@ -9,7 +9,7 @@ namespace Saga.OnlineStore.CatalogService.Infrastructure.Data
             : base(options)
         {
         }
-        public DbSet<Product> Books { get; set; } = default!;
+        public DbSet<Product> Products { get; set; } = default!;
 
     }
 }
