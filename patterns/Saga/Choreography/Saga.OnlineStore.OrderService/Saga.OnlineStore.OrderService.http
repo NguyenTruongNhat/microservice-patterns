@@ -1,6 +1,24 @@
-@Saga.OnlineStore.OrderService_HostAddress = http://localhost:5157
+@Saga.OnlineStore.OrderService_HostAddress = https://localhost:7284
 
-GET {{Saga.OnlineStore.OrderService_HostAddress}}/weatherforecast/
-Accept: application/json
+POST {{Saga.OnlineStore.OrderService_HostAddress}}/api/saga/v1/orders
+Content-Type: application/json
 
+{
+  "orderId": "00000000-0000-0000-0000-000000000000",
+  "customerId": "8A168D02-E235-41F5-A22C-DBDEF71A6D0A",
+  "customerName": "John Doe",
+  "customerPhone": "+1234567890",
+  "shippingAddress": "123 Main St, Springfield, IL 62701",
+  "paymentCardNumber": "1234567890123456",
+  "paymentCardName": "John Doe",
+  "paymentCardExpiration": "12/24",
+  "paymentCardCvv": "123",
+  "items": [
+    {
+      "productId": "01957eea-c993-714f-bf4a-ca767716031d",
+      "quantity": 1,
+      "unitPrice": 9.99
+    }
+  ]
+}
 ###
