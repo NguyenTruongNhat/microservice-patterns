@@ -1,9 +1,12 @@
 ﻿using EventBus.Kafka;
 using Microsoft.EntityFrameworkCore;
+using Saga.OnlineStore.InventoryService.APIs;
 using Saga.OnlineStore.InventoryService.Infrastructure.Data;
 
 namespace Saga.OnlineStore.InventoryService.Bootstraping
 {
+    
+
     public static class ApplicationServiceExtensions
     {
         public static IHostApplicationBuilder AddApplicationServices(this IHostApplicationBuilder builder)

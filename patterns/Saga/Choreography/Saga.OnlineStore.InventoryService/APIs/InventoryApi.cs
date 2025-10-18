@@ -1,9 +1,39 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 using Saga.OnlineStore.IntegrationEvents;
 using Saga.OnlineStore.InventoryService.Infrastructure.Entity;
 
 namespace Saga.OnlineStore.InventoryService.APIs
 {
+    public static class InventoryApiExtensions
+    {
+        public static IEndpointRouteBuilder MapInventoryApi(this IEndpointRouteBuilder builder)
+        {
+            builder.MapGroup("/api/saga/v1/inventory")
+                  .MapInventoryApi()
+                  .WithTags("Inventory Api");
+
+            return builder;
+        }
+
+        public static RouteGroupBuilder MapInventoryApi(this RouteGroupBuilder group)
+        {
+            group.MapGet("items", async ([AsParameters] ApiServices services) =>
+            {
+                return await services.DbContext.Items.ToListAsync();
+            });
+
+            group.MapGet("items/{id:guid}", async ([AsParameters] ApiServices services, Guid id) =>
+            {
+                return await services.DbContext.Items.FindAsync(id);
+            });
+
+            group.MapPut("items/{id:guid}/restock", InventoryApi.Restock);
+
+            return group;
+        }
+    }
+
     public class InventoryApi
     {
 
