@@ -1,0 +1,22 @@
+@Saga.OnlineStore.PaymentService_HostAddress = https://localhost:7240
+
+POST {{Saga.OnlineStore.PaymentService_HostAddress}}/api/saga/v1/cards
+Content-Type: application/json
+
+{
+    "Id": "53974C76-BC26-44CE-9DB2-AE3EBF095A28",
+    "CardNumber": "1234567890123456",
+    "ExpirationDate": "12/30",
+    "CardHolderName": "Test Card Holder",
+    "Cvv": "123"
+}
+
+###
+
+PUT {{Saga.OnlineStore.PaymentService_HostAddress}}/api/saga/v1/cards/53974C76-BC26-44CE-9DB2-AE3EBF095A28/deposit
+Content-Type: application/json
+
+{
+  "Amount": 999999
+}
+
