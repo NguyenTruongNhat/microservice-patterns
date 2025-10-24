@@ -9,7 +9,7 @@ namespace Saga.OnlineStore.PaymentService.EventHandlers
     public class PaymentIntegrationEventHandlers(PaymentDbContext dbContext,
     IEventPublisher eventPublisher,
     ILogger<PaymentIntegrationEventHandlers> logger) :
-    INotificationHandler<OrderItemsReservedIntegrationEvent>
+    IRequestHandler<OrderItemsReservedIntegrationEvent>
     {
         public async Task Handle(OrderItemsReservedIntegrationEvent request, CancellationToken cancellationToken)
         {

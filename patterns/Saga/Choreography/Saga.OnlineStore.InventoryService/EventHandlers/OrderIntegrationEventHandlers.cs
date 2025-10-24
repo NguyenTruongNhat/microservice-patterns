@@ -10,8 +10,8 @@ namespace Saga.OnlineStore.InventoryService.EventHandlers
     public class OrderIntegrationEventHandlers(InventoryDbContext dbContext,
         IEventPublisher eventPublisher,
         ILogger<ProductIntegrationEventHandlers> logger) :
-        INotificationHandler<OrderPlacedIntegrationEvent>,
-        INotificationHandler<OrderPaymentRejectedIntegrationEvent>
+        IRequestHandler<OrderPlacedIntegrationEvent>,
+        IRequestHandler<OrderPaymentRejectedIntegrationEvent>
     {
         public async Task Handle(OrderPlacedIntegrationEvent request, CancellationToken cancellationToken)
         {

@@ -9,9 +9,9 @@ namespace Saga.OnlineStore.OrderService.EventHandlers
     public class OrderIntegrationEventHandlers(OrderDbContext dbContext,
     IEventPublisher eventPublisher,
     ILogger<OrderIntegrationEventHandlers> logger) :
-    INotificationHandler<OrderItemsReservationFailedIntegrationEvent>,
-    INotificationHandler<OrderPaymentApprovedIntegrationEvent>,
-    INotificationHandler<OrderPaymentRejectedIntegrationEvent>
+    IRequestHandler<OrderItemsReservationFailedIntegrationEvent>,
+    IRequestHandler<OrderPaymentApprovedIntegrationEvent>,
+    IRequestHandler<OrderPaymentRejectedIntegrationEvent>
     {
         public async Task Handle(OrderItemsReservationFailedIntegrationEvent request, CancellationToken cancellationToken)
         {
@@ -64,6 +64,8 @@ namespace Saga.OnlineStore.OrderService.EventHandlers
                 return;
             }
             order.Status = Infrastructure.Entity.OrderStatus.Created;
+            order.StatusMessage = "Delivered";
+
             await dbContext.SaveChangesAsync(cancellationToken);
 
             await eventPublisher.PublishAsync(new OrderApprovedIntegrationEvent()

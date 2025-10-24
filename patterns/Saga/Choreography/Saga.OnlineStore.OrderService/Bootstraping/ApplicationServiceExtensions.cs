@@ -12,6 +12,12 @@ namespace Saga.OnlineStore.OrderService.Bootstraping
         public static IHostApplicationBuilder AddApplicationServices(this IHostApplicationBuilder builder)
         {
             builder.Services.AddOpenApi();
+
+            builder.Services.AddMediatR(cfg =>
+            {
+                cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
+            });
+
             // Add EF Core
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<OrderDbContext>(options => options.UseNpgsql(connectionString));

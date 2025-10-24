@@ -11,10 +11,15 @@ public static class ApplicationServiceExtensions
     public static IHostApplicationBuilder AddApplicationServices(this IHostApplicationBuilder builder)
     {
         builder.Services.AddOpenApi();
+
+        builder.Services.AddMediatR(cfg =>
+        {
+            cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
+        });
+
         // Add EF Core
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
         builder.Services.AddDbContext<PaymentDbContext>(options => options.UseNpgsql(connectionString));
-
 
         builder.Services.ConfigureKafkaProducer(builder.Configuration);
         var kafkaTopic = "Saga-OnlineStore-PaymentService";

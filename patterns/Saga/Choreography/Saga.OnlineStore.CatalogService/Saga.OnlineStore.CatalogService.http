@@ -5,8 +5,8 @@ Content-Type: application/json
 
 {
   "Id": "00000000-0000-0000-0000-000000000000",
-  "Name": "Test Product",
-  "Description": "Test Description",
+  "Name": "IP 17",
+  "Description": "Description for IP 17",
   "Price": 999
 }
 
@@ -17,8 +17,8 @@ Content-Type: application/json
 
 {
   "Id": "01957eea-c993-714f-bf4a-ca767716031d",
-  "Name": "Test Product",
-  "Description": "Test Description",
+  "Name": "Saga product 1",
+  "Description": "Description for product 1",
   "Price": 999
 }
 
