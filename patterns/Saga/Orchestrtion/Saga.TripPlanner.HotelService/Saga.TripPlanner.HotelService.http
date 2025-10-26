@@ -1,0 +1,41 @@
+@Saga.TripPlanner.HotelService_HostAddress = https://localhost:7113
+@base = {{Saga.TripPlanner.HotelService_HostAddress}}/api/saga/v1
+
+GET {{base}}/rooms
+Accept: application/json
+
+###
+
+
+GET {{base}}/rooms/{id}
+Accept: application/json
+
+
+###
+POST {{base}}/rooms
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Phòng Deluxe",
+  "price": 150.0,
+  "capacity": 2,
+  "description": "Phòng view bi?n, có ban công"
+}
+
+###
+POST {{base}}/bookings
+Content-Type: application/json
+Accept: application/json
+
+{
+  "roomId": "6f9619ff-8b86-d011-b42d-00cf4fc964ff",
+  "guestName": "Nguyen Truong Nhat",
+  "checkInDate": "2025-11-01",
+  "checkOutDate": "2025-11-05"
+}
+
+###
+PUT {{base}}/bookings/{bookingId}/cancel
+Accept: application/json
+
