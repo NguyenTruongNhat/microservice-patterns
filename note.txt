@@ -1,1 +1,16 @@
 Add-Migration Initial
+
+
+
+// Producer service
+builder.Services.ConfigureRabbitMQConnection(builder.Configuration);
+builder.AddRabbitMQEventPublisher(exchangeName: "integration-events");
+
+// Consumer service
+builder.Services.ConfigureRabbitMQConnection(builder.Configuration);
+builder.AddRabbitMQEventConsumer(options =>
+{
+    options.ExchangeName = "integration-events";
+    options.QueueName    = "my-service-queue";
+    options.AcceptEvent  = e => e.IsEvent<BookCreatedEvent>();
+});
