@@ -57,6 +57,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{720510EF-C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saga.TripPlanner.PaymentService", "patterns\Saga\Orchestrtion\Saga.TripPlanner.PaymentService\Saga.TripPlanner.PaymentService.csproj", "{84A409AD-2A0C-4030-BC0B-1D6B507C8A4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saga.TripPlanner.TripPlanningService", "patterns\Saga\Orchestrtion\Saga.TripPlanner.TripPlanningService\Saga.TripPlanner.TripPlanningService.csproj", "{2539EEC7-761D-40B8-9B51-1A0562CA7F54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +133,10 @@ Global
 		{84A409AD-2A0C-4030-BC0B-1D6B507C8A4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84A409AD-2A0C-4030-BC0B-1D6B507C8A4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84A409AD-2A0C-4030-BC0B-1D6B507C8A4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2539EEC7-761D-40B8-9B51-1A0562CA7F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2539EEC7-761D-40B8-9B51-1A0562CA7F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2539EEC7-761D-40B8-9B51-1A0562CA7F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2539EEC7-761D-40B8-9B51-1A0562CA7F54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -153,6 +159,7 @@ Global
 		{84697B2E-478A-409B-A04F-63067897A0DB} = {9C7B30A2-231A-4A62-B79A-2D221A48C782}
 		{FA7CB747-A04D-4BF3-A8DB-F64CA97D63F4} = {9C7B30A2-231A-4A62-B79A-2D221A48C782}
 		{84A409AD-2A0C-4030-BC0B-1D6B507C8A4C} = {9C7B30A2-231A-4A62-B79A-2D221A48C782}
+		{2539EEC7-761D-40B8-9B51-1A0562CA7F54} = {9C7B30A2-231A-4A62-B79A-2D221A48C782}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1EDCE8C1-96A9-48DD-B09B-95617D908E11}
