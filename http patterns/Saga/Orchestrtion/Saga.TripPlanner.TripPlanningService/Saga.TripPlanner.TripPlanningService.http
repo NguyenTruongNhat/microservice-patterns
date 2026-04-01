@@ -1,0 +1,26 @@
+@host = http://localhost:5056
+
+### Get all trips
+GET {{host}}/api/saga/v1/trips
+Accept: application/json
+
+###
+
+### Get a trip by ID (replace {id} with an actual GUID)
+GET {{host}}/api/saga/v1/trips/{id}
+Accept: application/json
+
+###
+
+### Create a new trip
+POST {{host}}/api/saga/v1/trips
+Content-Type: application/json
+
+{
+  "name": "Sample Trip",
+  "startDate": "2025-11-01T00:00:00Z",
+  "endDate": "2025-11-10T00:00:00Z",
+  "destination": "Paris"
+}
+
+###

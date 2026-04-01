@@ -1,0 +1,22 @@
+@Saga.TripPlanner.TicketService_HostAddress = http://localhost:5278
+
+
+GET {{Saga.TripPlanner.TicketService_HostAddress}}/api/tickets
+Accept: application/json
+
+###
+
+GET {{Saga.TripPlanner.TicketService_HostAddress}}/api/tickets/00000000-0000-0000-0000-000000000001
+Accept: application/json
+
+###
+
+POST {{Saga.TripPlanner.TicketService_HostAddress}}/api/tickets
+Content-Type: application/json
+
+{
+  "Name": "Concert Ticket",
+  "Description": "VIP ticket for the concert",
+  "Price": 150.00,
+  "TicketTypeId": "00000000-0000-0000-0000-000000000001"
+}
